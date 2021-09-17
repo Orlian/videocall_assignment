@@ -6,6 +6,7 @@ const app = express();
 const server = http.createServer(app);
 const socket = require('socket.io');
 const io = socket(server);
+const port = 8080;
 
 const rooms = {};
 
@@ -36,4 +37,4 @@ io.on('connection', socket => {
   });
 });
 
-server.listen(8000, () => console.log('server is running on port 8000'));
+server.listen(port, () => console.log(`server is running on port ${port}`));
